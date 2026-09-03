@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bsi India - Modern Furniture</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="header">
+        <div class="container nav">
+
+            <a href="#" class="logo">
+                Bsi <span> India </span>
+            </a>
+
+            <nav class="nav-links" id="navLinks">
+                <a href="#home">Home</a>
+                <a href="#categories">Categories</a>
+                <a href="#products">Products</a>
+                <a href="#about">About</a>
+                <a href="#reviews">Reviews</a>
+                <a href="#contact">Contact</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="search-btn">⌕</button>
+
+                <button class="cart-btn" onclick="showCart()">
+                    🛒 <span id="cartCount">0</span>
+                </button>
+
+                <button class="menu-btn" onclick="toggleMenu()">☰</button>
+            </div>
+
+        </div>
+    </header>
+
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+
+        <div class="container hero-content">
+
+            <div class="hero-text">
+                <p class="small-title">MODERN FURNITURE COLLECTION</p>
+
+                <h1>
+                    Make Your Home
+                    <span>Beautiful.</span>
+                </h1>
+
+                <p class="hero-description">
+                    Discover elegant furniture designed to make your
+                    home comfortable, stylish and timeless.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#products" class="btn primary-btn">
+                        Shop Collection →
+                    </a>
+
+                    <a href="#about" class="btn secondary-btn">
+                        Explore More
+                    </a>
+                </div>
+
+                <div class="hero-stats">
+                    <div>
+                        <strong>15+</strong>
+                        <span>Years Experience</span>
+                    </div>
+
+                    <div>
+                        <strong>50K+</strong>
+                        <span>Happy Customers</span>
+                    </div>
+
+                    <div>
+                        <strong>100+</strong>
+                        <span>Products</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-image">
+                <div class="image-card">
+                    <img
+                        src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=1000&q=80"
+                        alt="Modern Sofa"
+                    >
+                </div>
+
+                <div class="floating-card">
+                    <span>★</span>
+                    <div>
+                        <strong>4.9/5</strong>
+                        <small>Customer Rating</small>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CATEGORIES -->
+    <section class="section" id="categories">
+
+        <div class="container">
+
+            <div class="section-heading">
+                <div>
+                    <p class="small-title">EXPLORE</p>
+                    <h2>Shop By Category</h2>
+                </div>
+
+                <p>
+                    Find the perfect furniture pieces for every
+                    corner of your home.
+                </p>
+            </div>
+
+            <div class="category-grid">
+
+                <div class="category-card">
+                    <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=600&q=80">
+                    <div class="category-overlay">
+                        <h3>Sofas</h3>
+                        <span>25 Products →</span>
+                    </div>
+                </div>
+
+                <div class="category-card">
+                    <img src="https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&w=600&q=80">
+                    <div class="category-overlay">
+                        <h3>Chairs</h3>
+                        <span>18 Products →</span>
+                    </div>
+                </div>
+
+                <div class="category-card">
+                    <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=600&q=80">
+                    <div class="category-overlay">
+                        <h3>Bedroom</h3>
+                        <span>30 Products →</span>
+                    </div>
+                </div>
+
+                <div class="category-card">
+                    <img src="https://images.unsplash.com/photo-1556912173-3bb406ef7e77?auto=format&fit=crop&w=600&q=80">
+                    <div class="category-overlay">
+                        <h3>Dining</h3>
+                        <span>20 Products →</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PRODUCTS -->
+    <section class="section products-section" id="products">
+
+        <div class="container">
+
+            <div class="section-heading">
+                <div>
+                    <p class="small-title">OUR COLLECTION</p>
+                    <h2>Featured Products</h2>
+                </div>
+
+                <div class="filters">
+                    <button class="filter active" onclick="filterProducts('all', this)">
+                        All
+                    </button>
+
+                    <button class="filter" onclick="filterProducts('sofa', this)">
+                        Sofas
+                    </button>
+
+                    <button class="filter" onclick="filterProducts('chair', this)">
+                        Chairs
+                    </button>
+
+                    <button class="filter" onclick="filterProducts('table', this)">
+                        Tables
+                    </button>
+                </div>
+            </div>
+
+
+            <div class="product-grid" id="productGrid">
+
+                <div class="product-card" data-category="sofa">
+                    <div class="product-image">
+                        <span class="badge">NEW</span>
+
+                        <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=700&q=80">
+
+                        <button class="heart">♡</button>
+                    </div>
+
+                    <div class="product-info">
+                        <p>Sofa</p>
+                        <h3>Nordic Comfort Sofa</h3>
+
+                        <div class="rating">
+                            ★★★★★ <span>(48)</span>
+                        </div>
+
+                        <div class="product-bottom">
+                            <strong>₹28,999</strong>
+
+                            <button onclick="addToCart('Nordic Comfort Sofa')">
+                                + Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="product-card" data-category="chair">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?auto=format&fit=crop&w=700&q=80">
+
+                        <button class="heart">♡</button>
+                    </div>
+
+                    <div class="product-info">
+                        <p>Chair</p>
+                        <h3>Minimal Lounge Chair</h3>
+
+                        <div class="rating">
+                            ★★★★★ <span>(32)</span>
+                        </div>
+
+                        <div class="product-bottom">
+                            <strong>₹12,499</strong>
+
+                            <button onclick="addToCart('Minimal Lounge Chair')">
+                                + Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="product-card" data-category="table">
+                    <div class="product-image">
+                        <span class="badge sale">SALE</span>
+
+                        <img src="https://images.unsplash.com/photo-1533090481720-856c6e3c1fdc?auto=format&fit=crop&w=700&q=80">
+
+                        <button class="heart">♡</button>
+                    </div>
+
+                    <div class="product-info">
+                        <p>Table</p>
+                        <h3>Oak Coffee Table</h3>
+
+                        <div class="rating">
+                            ★★★★★ <span>(61)</span>
+                        </div>
+
+                        <div class="product-bottom">
+                            <strong>₹9,999</strong>
+
+                            <button onclick="addToCart('Oak Coffee Table')">
+                                + Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="product-card" data-category="sofa">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?auto=format&fit=crop&w=700&q=80">
+
+                        <button class="heart">♡</button>
+                    </div>
+
+                    <div class="product-info">
+                        <p>Sofa</p>
+                        <h3>Classic Beige Sofa</h3>
+
+                        <div class="rating">
+                            ★★★★★ <span>(27)</span>
+                        </div>
+
+                        <div class="product-bottom">
+                            <strong>₹32,999</strong>
+
+                            <button onclick="addToCart('Classic Beige Sofa')">
+                                + Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+    <section class="about section" id="about">
+
+        <div class="container about-grid">
+
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=900&q=80">
+            </div>
+
+            <div class="about-content">
+
+                <p class="small-title">ABOUT BSI INDIA</p>
+
+                <h2>Furniture Made With Passion & Purpose</h2>
+
+                <p>
+                    At bsi india, we believe furniture should be more
+                    than just beautiful. It should be comfortable,
+                    durable and made to become part of your everyday life.
+                </p>
+
+                <p>
+                    Every piece is carefully selected and crafted with
+                    attention to quality, design and detail.
+                </p>
+
+                <a href="#contact" class="btn primary-btn">
+                    Learn More →
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- OFFER -->
+    <section class="offer">
+
+        <div class="container offer-content">
+
+            <div>
+                <p class="small-title">LIMITED OFFER</p>
+
+                <h2>
+                    Get 20% Off Your
+                    First Order
+                </h2>
+
+                <p>
+                    Create a beautiful home without breaking the bank.
+                </p>
+            </div>
+
+            <a href="#products" class="btn white-btn">
+                Shop Now →
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- REVIEWS -->
+    <section class="section" id="reviews">
+
+        <div class="container">
+
+            <div class="center-heading">
+                <p class="small-title">CUSTOMER LOVE</p>
+                <h2>What Our Customers Say</h2>
+            </div>
+
+            <div class="review-grid">
+
+                <div class="review-card">
+                    <div class="rating">★★★★★</div>
+
+                    <p>
+                        "The sofa quality is amazing. It completely
+                        transformed my living room."
+                    </p>
+
+                    <div class="customer">
+                        <div class="avatar">A</div>
+                        <div>
+                            <strong>Arjun Sharma</strong>
+                            <small>New Delhi</small>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="review-card">
+                    <div class="rating">★★★★★</div>
+
+                    <p>
+                        "Beautiful designs and excellent quality.
+                        Delivery was also very smooth."
+                    </p>
+
+                    <div class="customer">
+                        <div class="avatar">P</div>
+                        <div>
+                            <strong>Priya Mehta</strong>
+                            <small>Mumbai</small>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="review-card">
+                    <div class="rating">★★★★★</div>
+
+                    <p>
+                        "I loved the minimal design. Definitely
+                        ordering again for my bedroom."
+                    </p>
+
+                    <div class="customer">
+                        <div class="avatar">R</div>
+                        <div>
+                            <strong>ashok kumar</strong>
+                            <small>Noida</small>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+    <section class="contact section" id="contact">
+
+        <div class="container contact-box">
+
+            <div>
+                <p class="small-title">STAY CONNECTED</p>
+
+                <h2>Get Updates From BSI India</h2>
+
+                <p>
+                    Subscribe for new collections, offers and
+                    interior design inspiration.
+                </p>
+            </div>
+
+            <form onsubmit="subscribe(event)">
+                <input
+                    type="email"
+                    placeholder="Enter your email"
+                    required
+                >
+
+                <button type="submit" class="btn primary-btn">
+                    Subscribe
+                </button>
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+
+        <div class="container footer-grid">
+
+            <div>
+                <a href="#" class="logo">
+                    BSI<span>India</span>
+                </a>
+
+                <p>
+                    Modern furniture for modern living.
+                    Designed to make your home beautiful.
+                </p>
+
+                <div class="socials">
+                    <a href="#">f</a>
+                    <a href="#">in</a>
+                    <a href="#">ig</a>
+                </div>
+            </div>
+
+
+            <div>
+                <h4>Quick Links</h4>
+                <a href="#home">Home</a>
+                <a href="#products">Products</a>
+                <a href="#about">About Us</a>
+                <a href="#contact">Contact</a>
+            </div>
+
+
+            <div>
+                <h4>Categories</h4>
+                <a href="#products">Sofas</a>
+                <a href="#products">Chairs</a>
+                <a href="#products">Tables</a>
+                <a href="#products">Bedroom</a>
+            </div>
+
+
+            <div>
+                <h4>Contact</h4>
+                <p>📍Greater noida sec 1 Uttar Pradesh</p>
+                <p>📞 +91 98713 59645</p>
+                <p>📞 +91 96278 54014</p>
+                <p>📞 +91 97173 56217</p>
+
+                <p>✉ bsiindia@gmail.com</p>
+            </div>
+
+        </div>
+
+        <div class="copyright">
+            © 2026 BSI India. All Rights Reserved.
+        </div>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="script.js"></script>
+
+</body>
+</html>
